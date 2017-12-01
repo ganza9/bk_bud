@@ -1,66 +1,47 @@
 <h1 class="jumbotron">Brooklyn Bud</h1>
 
 
-<%= link_to 'Flowers', '/flowers' %>
-<br>
-<%= link_to 'Pre Rolls', '/pre_rolls' %>
-<br>
-<%= link_to 'Edibles', '/edibles' %>
-<br>
-<%= link_to 'Other Products', '/others' %>
-<br>
-
-<div class="row">
-  <div class="col col-lg-6">
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-block">
-       <h4 class="card-title">Card title</h4>
-       <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-       <a href="#" class="card-link">Card link</a>
-       <a href="#" class="card-link">Another link</a>
-     </div>
+<div class="container">
+  <div class="row">
+    <div class="col col-lg-6">
+      <div class="card">
+        <img class="card-img-top"> <%= image_tag "flower.png" %> </img>
+        <div class="card-block">
+         <h4 class="card-title"><%= link_to 'Flowers', '/flowers' %></h4>
+         <p class="card-text">Commonly referred to as the ‘bud’ of the plant, flower is what most people think of, when discussing cannabis.</p>
+       </div>
+      </div>
+    </div>
+    <div class="col col-lg-6">
+      <div class="card">
+        <img class="card-img-top"><%= image_tag "pre_roll.png" %></img>
+        <div class="card-block">
+         <h4 class="card-title"><%= link_to 'Pre Rolls', '/pre_rolls' %></h4>
+         <p class="card-text">Cheap, discreet, disposable, and easily shared among friends.</p>
+       </div>
+      </div>
     </div>
   </div>
-  <div class="col col-lg-6">
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-block">
-       <h4 class="card-title">Card title</h4>
-       <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-       <a href="#" class="card-link">Card link</a>
-       <a href="#" class="card-link">Another link</a>
-     </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col col-lg-6">
+      <div class="card">
+        <img class="card-img-top"> <%= image_tag "edible.png" %> </img>
+        <div class="card-block">
+         <h4 class="card-title"><%= link_to 'Edibles', '/edibles' %></h4>
+         <p class="card-text">Selection includes cookies, candy, gourmet chocolates, soups, cheese crisps, chocolate covered espresso beans, granola, nuts, coffee, tea, soda, honey sticks, and more.</p>
+       </div>
+      </div>
     </div>
-  </div>
-</div>
-<br>
-<br>
-<div class="row">
-  <div class="col col-lg-6">
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-block">
-       <h4 class="card-title">Card title</h4>
-       <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-       <a href="#" class="card-link">Card link</a>
-       <a href="#" class="card-link">Another link</a>
-     </div>
-    </div>
-  </div>
-  <div class="col col-lg-6">
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-block">
-       <h4 class="card-title">Card title</h4>
-       <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-       <a href="#" class="card-link">Card link</a>
-       <a href="#" class="card-link">Another link</a>
-     </div>
+    <div class="col col-lg-6">
+      <div class="card">
+        <img class="card-img-top"> <%= image_tag "bongs.png" %> </img>
+        <div class="card-block">
+         <h4 class="card-title"><%= link_to 'Other Products', '/others' %></h4>
+         <p class="card-text">We offer a curated selection of glass wear and other paraphernalia from across the United States. Our team researches and seeks out emerging companies doing inventive things, traditional brands, and sustainable products.</p>
+       </div>
+      </div>
     </div>
   </div>
 </div>
