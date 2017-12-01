@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :edibles
   resources :pre_rolls
   resources :flowers
   resources :indicas
