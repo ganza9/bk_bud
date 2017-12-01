@@ -7,10 +7,30 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  
+
   <body>
     <div class="container-fluid">
-      <h1 class="jumbotron">Brooklyn Bud</h1>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Brooklyn Bud</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+            <li><a href="#"><%=current_user.username %></a></li>
+            <li><%= link_to "Sign Out", "/users/sign_out", method: :delete %></li>
+          <% else %>
+            <div class="btn-sm btn-basic">
+              <li><%= link_to "Log In", '/users/sign_in' %></li>
+            </div>
+            <div class="btn-sm btn-default">
+              <li><%= link_to "Sign Up", '/users/sign_up' %></li>
+            </div>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+    <div class="container">
       <%= yield %>
     </div>
   </body>
