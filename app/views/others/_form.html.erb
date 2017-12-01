@@ -1,0 +1,47 @@
+<%= form_with(model: other, local: true) do |form| %>
+  <% if other.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(other.errors.count, "error") %> prohibited this other from being saved:</h2>
+
+      <ul>
+      <% other.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :other_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :other_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thc %>
+    <%= form.number_field :thc, id: :other_thc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :other_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :indica_id %>
+    <%= form.number_field :indica_id, id: :other_indica_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sativa_id %>
+    <%= form.number_field :sativa_id, id: :other_sativa_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
