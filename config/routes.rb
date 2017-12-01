@@ -2,11 +2,26 @@ Rails.application.routes.draw do
   root :to => 'pages#home'
 
   resources :reviews
-  resources :others
-  resources :edibles
-  resources :pre_rolls
-  resources :flowers
+
+
+  resources :others do
+    resources :reviews
+  end
+
+  resources :edibles do
+    resources :reviews
+  end
+
+  resources :pre_rolls do
+    resources :reviews
+  end
+
+  resources :flowers do
+    resources :reviews
+  end
+
   resources :indicas
+
   resources :sativas
 
   devise_for :users
