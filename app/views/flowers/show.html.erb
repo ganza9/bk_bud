@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @flower.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @flower.price %>
+</p>
+
+<p>
+  <strong>Thc:</strong>
+  <%= @flower.thc %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @flower.description %>
+</p>
+
+<p>
+  <strong>Indica:</strong>
+  <%= @flower.indica_id %>
+</p>
+
+<p>
+  <strong>Sativa:</strong>
+  <%= @flower.sativa_id %>
+</p>
+
+<%= link_to 'Edit', edit_flower_path(@flower) %> |
+<%= link_to 'Back', flowers_path %>
