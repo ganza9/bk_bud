@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root :to => 'pages#home'
+
   resources :others
   resources :edibles
   resources :pre_rolls
