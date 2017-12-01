@@ -1,0 +1,47 @@
+<%= form_with(model: pre_roll, local: true) do |form| %>
+  <% if pre_roll.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pre_roll.errors.count, "error") %> prohibited this pre_roll from being saved:</h2>
+
+      <ul>
+      <% pre_roll.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :pre_roll_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :pre_roll_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thc %>
+    <%= form.number_field :thc, id: :pre_roll_thc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :pre_roll_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :indica_id %>
+    <%= form.number_field :indica_id, id: :pre_roll_indica_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sativa_id %>
+    <%= form.number_field :sativa_id, id: :pre_roll_sativa_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

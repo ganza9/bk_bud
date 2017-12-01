@@ -1,0 +1,2 @@
+class PreRoll < ApplicationRecord
+end
