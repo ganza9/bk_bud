@@ -1,0 +1,2 @@
+class Indica < ApplicationRecord
+end

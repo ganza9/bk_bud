@@ -1,0 +1,17 @@
+<%= form_with(model: indica, local: true) do |form| %>
+  <% if indica.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(indica.errors.count, "error") %> prohibited this indica from being saved:</h2>
+
+      <ul>
+      <% indica.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
