@@ -20,21 +20,13 @@
   <%= @flower.description %>
 </p>
 
+  <% if current_user %>
+    <%= link_to 'Add Review', new_flower_review_path(@flower) %>
 
-<%= link_to 'Add Review', new_flower_review_path(@flower) %>
+  <% end %>
 
 
-<strong>Reviews:</strong>
-      <% if @flower.reviews.any? %>
-      <ul>
-        <% @flower.reviews.each do |review| %>
-          <li><strong>Author:</strong> <%= review.title %> </li>
-          <br>
-          <li><strong>What I Thought:</strong> <%= review.content %> </li>
-          <br>
-        <% end %>
-      </ul>
-      <% end %>
-
-<%= link_to 'Edit', edit_flower_path(@flower) %> |
-<%= link_to 'Back', flowers_path %>
+  <% if current_user && current_user.admin %>
+    <%= link_to 'Edit', edit_flower_path(@flower) %> |
+    <%= link_to 'Back', flowers_path %>
+  <% end %>
