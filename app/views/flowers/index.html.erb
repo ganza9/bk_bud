@@ -7,7 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Price</th>
-      <th>Thc</th>
+      <th>THC</th>
       <th>Description</th>
       <th>Indica</th>
       <th>Sativa</th>
@@ -25,13 +25,14 @@
         <td><%= flower.indica_id %></td>
         <td><%= flower.sativa_id %></td>
         <td><%= link_to 'Show', flower %></td>
-        <td><%= link_to 'Edit', edit_flower_path(flower) %></td>
-        <td><%= link_to 'Destroy', flower, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% if current_user && current_user.admin %>
+          <td><%= link_to 'New Flower', new_flower_path %></td>
+          <td><%= link_to 'Edit', edit_flower_path(flower) %></td>
+          <td><%= link_to 'Destroy', flower, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Flower', new_flower_path %>
