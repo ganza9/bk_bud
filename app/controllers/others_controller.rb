@@ -1,6 +1,10 @@
 class OthersController < ApplicationController
-  before_action :set_other, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authenticate_user!, :except => [:show]
+  #
+  before_action :only => [:new, :edit] do
+      redirect_to new_user_session_path unless current_user && current_user.admin
+    end
+    
   # GET /others
   # GET /others.json
   def index
