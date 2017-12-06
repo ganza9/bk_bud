@@ -29,4 +29,18 @@
     <%= link_to 'Edit', edit_flower_path(@flower) %> |
   <% end %>
 
+
+
+  <br>
+
+
+<% if @flower.reviews.any? %>
+  <ul>
+    <% @flower.reviews.each do |review| %>
+      <li> <%= review.reviewer %> </li>
+      <li> <%= review.review_content %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
   <%= link_to 'Back', flowers_path %>
