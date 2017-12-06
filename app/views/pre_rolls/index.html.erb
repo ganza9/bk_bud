@@ -21,13 +21,13 @@
         <td><%= pre_roll.thc %></td>
         <td><%= pre_roll.description %></td>
         <td><%= link_to 'Show', pre_roll %></td>
+        <% if current_user && current_user.admin %>
+        <td><%= link_to 'New Pre Roll', new_pre_roll_path %></td>
         <td><%= link_to 'Edit', edit_pre_roll_path(pre_roll) %></td>
         <td><%= link_to 'Destroy', pre_roll, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Pre Roll', new_pre_roll_path %>
