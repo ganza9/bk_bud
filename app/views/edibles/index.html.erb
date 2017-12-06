@@ -17,8 +17,8 @@
     <% @edibles.each do |edible| %>
       <tr>
         <td><%= edible.name %></td>
-        <td><%= edible.price %></td>
-        <td><%= edible.thc %></td>
+        <td>$<%= edible.price %></td>
+        <td><%= edible.thc %>%</td>
         <td><%= edible.description %></td>
         <td><%= link_to 'Show', edible %></td>
         <% if current_user && current_user.admin %>
@@ -31,3 +31,4 @@
 </table>
 
 <br>
+<%= link_to 'Home', "/" %>

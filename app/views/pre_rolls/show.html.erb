@@ -7,12 +7,12 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @pre_roll.price %>
+  $<%= @pre_roll.price %>
 </p>
 
 <p>
-  <strong>Thc:</strong>
-  <%= @pre_roll.thc %>
+  <strong>THC:</strong>
+  <%= @pre_roll.thc %>%
 </p>
 
 <p>
@@ -20,14 +20,27 @@
   <%= @pre_roll.description %>
 </p>
 
-
-    <%= link_to 'Add Review', new_flower_pre_roll_path(@pre_roll) %>
-
-
-
   <% if current_user && current_user.admin %>
 <%= link_to 'Edit', edit_pre_roll_path(@pre_roll) %> |
   <% end %>
 
+  <h3>Reviews</h3>
+  <div class="row">
+    <% if @pre_roll.reviews.any? %>
+      <% @pre_roll.reviews.each do |review| %>
+        <div class="col col-lg-4">
+          <div class="card review">
+            <div class="card-block">
+                <h4 class="card-title"> <%= review.reviewer %> </h4>
+                <p class="card-text"><%= review.review_content %> </p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+    <% end %>
+  </div>
 
+<br>
+<%= link_to 'Add Review', new_pre_roll_review_path(@pre_roll) %>
 <%= link_to 'Back', pre_rolls_path %>
+<%= link_to 'Home', "/" %>

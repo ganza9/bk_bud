@@ -7,21 +7,41 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @other.price %>
+  $<%= @other.price %>
 </p>
 
 <p>
   <strong>Description:</strong>
-  <%= @other.description %>
+  <%= @other.description %>%
 </p>
 
 
-    <%= link_to 'Add Review', new_other_review_path(@other) %>
-  
+
 
 
   <% if current_user && current_user.admin %>
     <%= link_to 'Edit', edit_other_path(@other) %> |
   <% end %>
 
-<%= link_to 'Back', others_path %>
+
+<h3>Reviews</h3>
+  <div class="row">
+    <% if @other.reviews.any? %>
+      <% @other.reviews.each do |review| %>
+        <div class="col col-lg-4">
+          <div class="card review">
+            <div class="card-block">
+                <h4 class="card-title"> <%= review.reviewer %> </h4>
+                <p class="card-text"><%= review.review_content %> </p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+    <% end %>
+  </div>
+
+
+<br>
+<%= link_to 'Add Review', new_other_review_path(@other) %> |
+<%= link_to 'Back', others_path %>|
+<%= link_to 'Home', "/" %>

@@ -16,8 +16,8 @@
     <% @others.each do |other| %>
       <tr>
         <td><%= other.name %></td>
-        <td><%= other.price %></td>
-        <td><%= other.description %></td>
+        <td>$<%= other.price %></td>
+        <td><%= other.description %>%</td>
         <td><%= link_to 'Show', other %></td>
         <% if current_user && current_user.admin %>
         <td><%= link_to 'New Other', new_other_path %></td>
@@ -30,3 +30,4 @@
 </table>
 
 <br>
+<%= link_to 'Home', "/" %>

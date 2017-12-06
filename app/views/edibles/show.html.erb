@@ -7,12 +7,12 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @edible.price %>
+  $<%=  @edible.price %>
 </p>
 
 <p>
   <strong>Thc:</strong>
-  <%= @edible.thc %>
+  <%= @edible.thc %>%
 </p>
 
 <p>
@@ -20,14 +20,27 @@
   <%= @edible.description %>
 </p>
 
-
-    <%= link_to 'Add Review', new_edible_review_path(@edible) %>
-  
-
-
   <% if current_user && current_user.admin %>
   <%= link_to 'Edit', edit_edible_path(@edible) %> |
   <% end %>
 
+<h3>Reviews</h3>
+  <div class="row">
+    <% if @edible.reviews.any? %>
+      <% @edible.reviews.each do |review| %>
+        <div class="col col-lg-4">
+          <div class="card review">
+            <div class="card-block">
+                <h4 class="card-title"> <%= review.reviewer %> </h4>
+                <p class="card-text"><%= review.review_content %> </p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+    <% end %>
+  </div>
 
-<%= link_to 'Back', edibles_path %>
+<br>
+<%= link_to 'Add Review', new_edible_review_path(@edible) %> |
+<%= link_to 'Back', edibles_path %> |
+<%= link_to 'Home', "/" %>

@@ -17,8 +17,8 @@
     <% @pre_rolls.each do |pre_roll| %>
       <tr>
         <td><%= pre_roll.name %></td>
-        <td><%= pre_roll.price %></td>
-        <td><%= pre_roll.thc %></td>
+        <td>$<%= pre_roll.price %></td>
+        <td><%= pre_roll.thc %>%</td>
         <td><%= pre_roll.description %></td>
         <td><%= link_to 'Show', pre_roll %></td>
         <% if current_user && current_user.admin %>
@@ -31,3 +31,4 @@
 </table>
 
 <br>
+<%= link_to 'Home', "/" %>

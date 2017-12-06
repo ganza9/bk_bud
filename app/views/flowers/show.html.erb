@@ -7,12 +7,12 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @flower.price %>
+  $<%= @flower.price %>
 </p>
 
 <p>
   <strong>Thc:</strong>
-  <%= @flower.thc %>
+  <%=  @flower.thc %>%
 </p>
 
 <p>
@@ -20,29 +20,30 @@
   <%= @flower.description %>
 </p>
 
-
-    <%= link_to 'Add Review', new_flower_review_path(@flower) %>
-
-
-
   <% if current_user && current_user.admin %>
     <%= link_to 'Edit', edit_flower_path(@flower) %> |
   <% end %>
 
 
-
   <br>
 
-
-<% if @flower.reviews.any? %>
-  <ul>
-    <% @flower.reviews.each do |review| %>
-      <li> <%= review.reviewer %> </li>
-      <li> <%= review.review_content %> </li>
+<h3>Reviews</h3>
+  <div class="row">
+    <% if @flower.reviews.any? %>
+      <% @flower.reviews.each do |review| %>
+        <div class="col col-lg-4">
+          <div class="card review">
+            <div class="card-block">
+              <p class="card-text">"<%= review.review_content %>"</p>
+              <h4 class="card-title"> - <%= review.reviewer %> </h4>
+            </div>
+          </div>
+        </div>
+        <% end %>
     <% end %>
-  </ul>
-<% end %>
+  </div>
 
-  <br>
-
-  <%= link_to 'Back', flowers_path %>
+<br>
+<%= link_to 'Add Review', new_flower_review_path(@flower) %> |
+<%= link_to 'Back', flowers_path %> |
+<%= link_to 'Home', "/" %>

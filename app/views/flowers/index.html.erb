@@ -17,8 +17,8 @@
     <% @flowers.each do |flower| %>
       <tr>
         <td><%= flower.name %></td>
-        <td><%= flower.price %></td>
-        <td><%= flower.thc %></td>
+        <td>$<%= flower.price %></td>
+        <td><%= flower.thc %>%</td>
         <td><%= flower.description %></td>
         <td><%= link_to 'Show', flower %></td>
           <% if current_user && current_user.admin %>
@@ -32,3 +32,4 @@
 </table>
 
 <br>
+<%= link_to 'Home', "/" %>
