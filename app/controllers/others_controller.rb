@@ -1,10 +1,10 @@
 class OthersController < ApplicationController
-  skip_before_action :authenticate_user!, :except => [:show]
+  skip_before_action :authenticate_user!, :only => [:index, :show]
   #
-  before_action :only => [:new, :edit] do
-      redirect_to new_user_session_path unless current_user && current_user.admin
-    end
-    
+  # before_action :only => [:new, :edit] do
+  #     redirect_to new_user_session_path unless current_user && current_user.admin
+  #   end
+
   # GET /others
   # GET /others.json
   def index
@@ -14,6 +14,7 @@ class OthersController < ApplicationController
   # GET /others/1
   # GET /others/1.json
   def show
+    @other = Other.find(params[:id])
   end
 
   # GET /others/new

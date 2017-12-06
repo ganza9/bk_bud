@@ -1,10 +1,10 @@
 class EdiblesController < ApplicationController
-  skip_before_action :authenticate_user!, :except => [:show]
+  skip_before_action :authenticate_user!, :only => [:index, :show]
   #
-  before_action :only => [:new, :edit] do
-      redirect_to new_user_session_path unless current_user && current_user.admin
-    end
-    
+  # before_action :only => [:new, :edit] do
+  #     redirect_to new_user_session_path unless current_user && current_user.admin
+  #   end
+
   # GET /edibles
   # GET /edibles.json
   def index
@@ -14,6 +14,7 @@ class EdiblesController < ApplicationController
   # GET /edibles/1
   # GET /edibles/1.json
   def show
+    @edible = Edible.find(params[:id])
   end
 
   # GET /edibles/new

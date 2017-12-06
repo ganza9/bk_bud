@@ -1,9 +1,10 @@
 class PreRollsController < ApplicationController
-  skip_before_action :authenticate_user!, :except => [:show]
+  skip_before_action :authenticate_user!, :only => [:index, :show]
   #
-  before_action :only => [:new, :edit] do
-      redirect_to new_user_session_path unless current_user && current_user.admin
-    end
+  # before_action :only => [:new, :edit] do
+  #     redirect_to new_user_session_path unless current_user && current_user.admin
+  #   end
+
   # GET /pre_rolls
   # GET /pre_rolls.json
   def index
@@ -13,6 +14,7 @@ class PreRollsController < ApplicationController
   # GET /pre_rolls/1
   # GET /pre_rolls/1.json
   def show
+    @pre_roll = PreRoll.find(params[:id])
   end
 
   # GET /pre_rolls/new
