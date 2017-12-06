@@ -14,6 +14,7 @@ class FlowersController < ApplicationController
   # GET /flowers/1
   # GET /flowers/1.json
   def show
+    @flower = Flower.find(params[:id])
   end
 
   # GET /flowers/new
