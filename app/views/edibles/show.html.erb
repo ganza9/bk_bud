@@ -20,9 +20,9 @@
   <%= @edible.description %>
 </p>
 
-  <% if current_user %>
+
     <%= link_to 'Add Review', new_edible_review_path(@edible) %>
-  <% end %>
+  
 
 
   <% if current_user && current_user.admin %>

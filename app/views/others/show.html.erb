@@ -15,9 +15,9 @@
   <%= @other.description %>
 </p>
 
-  <% if current_user %>
+
     <%= link_to 'Add Review', new_other_review_path(@other) %>
-  <% end %>
+  
 
 
   <% if current_user && current_user.admin %>
