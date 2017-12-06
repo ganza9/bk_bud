@@ -22,8 +22,6 @@
         <td><%= flower.price %></td>
         <td><%= flower.thc %></td>
         <td><%= flower.description %></td>
-        <td><%= flower.indica_id %></td>
-        <td><%= flower.sativa_id %></td>
         <td><%= link_to 'Show', flower %></td>
           <% if current_user && current_user.admin %>
           <td><%= link_to 'New Flower', new_flower_path %></td>

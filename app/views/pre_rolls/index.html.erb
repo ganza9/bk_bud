@@ -9,8 +9,6 @@
       <th>Price</th>
       <th>Thc</th>
       <th>Description</th>
-      <th>Indica</th>
-      <th>Sativa</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,8 +20,6 @@
         <td><%= pre_roll.price %></td>
         <td><%= pre_roll.thc %></td>
         <td><%= pre_roll.description %></td>
-        <td><%= pre_roll.indica_id %></td>
-        <td><%= pre_roll.sativa_id %></td>
         <td><%= link_to 'Show', pre_roll %></td>
         <td><%= link_to 'Edit', edit_pre_roll_path(pre_roll) %></td>
         <td><%= link_to 'Destroy', pre_roll, method: :delete, data: { confirm: 'Are you sure?' } %></td>
