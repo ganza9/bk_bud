@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171201224810) do
+ActiveRecord::Schema.define(version: 20171206172801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,6 @@ ActiveRecord::Schema.define(version: 20171201224810) do
     t.integer "price"
     t.integer "thc"
     t.text "description"
-    t.integer "indica_id"
-    t.integer "sativa_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,13 +29,6 @@ ActiveRecord::Schema.define(version: 20171201224810) do
     t.integer "price"
     t.integer "thc"
     t.text "description"
-    t.integer "indica_id"
-    t.integer "sativa_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "indicas", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,8 +38,6 @@ ActiveRecord::Schema.define(version: 20171201224810) do
     t.integer "price"
     t.integer "thc"
     t.text "description"
-    t.integer "indica_id"
-    t.integer "sativa_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,13 +47,6 @@ ActiveRecord::Schema.define(version: 20171201224810) do
     t.integer "price"
     t.integer "thc"
     t.text "description"
-    t.integer "indica_id"
-    t.integer "sativa_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "sativas", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
