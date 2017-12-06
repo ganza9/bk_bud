@@ -1,2 +1,0 @@
-class Sativa < ApplicationRecord
-end
