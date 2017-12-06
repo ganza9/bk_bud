@@ -20,5 +20,13 @@
   <%= @other.description %>
 </p>
 
-<%= link_to 'Edit', edit_other_path(@other) %> |
+  <% if current_user %>
+    <%= link_to 'Add Review', new_other_review_path(@other) %>
+  <% end %>
+
+
+  <% if current_user && current_user.admin %>
+    <%= link_to 'Edit', edit_other_path(@other) %> |
+  <% end %>
+
 <%= link_to 'Back', others_path %>
