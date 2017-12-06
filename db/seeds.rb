@@ -40,10 +40,10 @@ Review.destroy_all
 5.times do |index|
   Review.create!(reviewer: Faker::Seinfeld.character,
                 review_content: Faker::Seinfeld.quote,
-                # edible_id: Faker::Number.between(1, 5)
-                flower_id: Faker::Number.between(1, 5)
-                # other_id: Faker::Number.between(1, 5),
-                # pre_roll_id: Faker::Number.between(1, 5)
+                edible_id: Faker::Number.between(23, 27),
+                flower_id: Faker::Number.between(24, 28),
+                other_id: Faker::Number.between(27, 31),
+                pre_roll_id: Faker::Number.between(23, 27)
                 )
 end
 
