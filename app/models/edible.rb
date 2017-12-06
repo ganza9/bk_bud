@@ -1,3 +1,3 @@
 class Edible < ApplicationRecord
-  has_many :reviews, as: :reviewable
+  has_many :reviews
 end
