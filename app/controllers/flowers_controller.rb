@@ -74,6 +74,6 @@ class FlowersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def flower_params
-      params.require(:flower).permit(:name, :price, :thc, :description, :indica_id, :sativa_id)
+      params.require(:flower).permit(:name, :price, :thc, :description)
     end
 end
