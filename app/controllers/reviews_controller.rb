@@ -32,19 +32,20 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    if params[:flower_id]
-      @flower = Flower.find(params[:flower_id])
-      @review = @flower.review.new(review_params)
-    elsif params[:edible_id]
-      @edible = Edible.find(params[:edible_id])
-      @review = @edible.review.new
-    elsif params[:other_id]
-      @other = Other.find(params[:other_id])
-      @review = @other.review.new
-    elsif params[:pre_roll_id]
-      @pre_roll = PreRoll.find(params[:pre_roll_id])
-      @review = @pre_roll.review.new
-    end
+    @review = Review.new(review_params)
+    # if params[:flower_id]
+    #   @flower = Flower.find(params[:flower_id])
+    #   @review = @flower.review.new(review_params)
+    # elsif params[:edible_id]
+    #   @edible = Edible.find(params[:edible_id])
+    #   @review = @edible.review.new
+    # elsif params[:other_id]
+    #   @other = Other.find(params[:other_id])
+    #   @review = @other.review.new
+    # elsif params[:pre_roll_id]
+    #   @pre_roll = PreRoll.find(params[:pre_roll_id])
+    #   @review = @pre_roll.review.new
+    # end
 
     respond_to do |format|
       if @review.save
