@@ -28,6 +28,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rails-erd', require: false
+  gem 'pry'
 end
 
 group :development do
