@@ -2,7 +2,6 @@
   "RSpec": {
     "coverage": {
       "/Users/Guest/Desktop/bk_bud/spec/features/add_flower_pages_spec.rb": [
-        null,
         1,
         null,
         1,
@@ -518,7 +517,7 @@
         1,
         null,
         null,
-        1,
+        null,
         null
       ],
       "/Users/Guest/Desktop/bk_bud/app/models/application_record.rb": [
@@ -958,17 +957,18 @@
         null,
         1,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         0,
@@ -1049,9 +1049,6 @@
         null
       ],
       "/Users/Guest/Desktop/bk_bud/app/models/review.rb": [
-        1,
-        1,
-        1,
         1,
         1,
         null
@@ -1161,6 +1158,6 @@
 
       ]
     },
-    "timestamp": 1512673779
+    "timestamp": 1512676195
   }
 }
