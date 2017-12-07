@@ -29,6 +29,10 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rails-erd', require: false
   gem 'pry'
+  gem "factory_bot_rails", "~> 4.0"
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'launchy'
 end
 
 group :development do
