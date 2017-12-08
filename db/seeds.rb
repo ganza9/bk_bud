@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Review.destroy_all
+# Flower.destroy_all
+# Edible.destroy_all
+# Other.destroy_all
+# PreRoll.destroy_all
 
 # Flower.create(name: "Blue Dream", price: 14, thc: 18, description: "Blueberry x Haze. A West Coast classic, this potent sativa provides happy, uplifting, and euphoric effects without heavy sedation.")
 # Flower.create(name: "Amnesia", price: 15, thc: 23, description: "Jamaican Sativa x Laotian Sativa x Afghani Hawaiian. Good option for daytime play or creativity. Dense and sticky perfection.")
@@ -31,19 +36,12 @@
 # PreRoll.create(name: "Sour Diesel", price: 13, thc: 24, description: "Super Skunk x Chemdawg. Stimulating, energetic, head buzz. Gassy, pine flavor, clean your house type of feel. Also perfect for a wake n bake session in the morning, no need for coffee!")
 # PreRoll.create(name: "Nightmare Cookies", price: 12, thc: 26, description: "Platinum GSC x White Nightmare come together to create this robust euphoric experience. An aroma of earthy pine sap and sweet goodness. This strain will jolt you into an uplifting and happy space great for anytime throughout the day.")
 
-Review.destroy_all
-# Flower.destroy_all
-# Edible.destroy_all
-# Other.destroy_all
-# PreRoll.destroy_all
-#
+
+
 5.times do |index|
   Review.create!(reviewer: Faker::Seinfeld.character,
                 review_content: Faker::Seinfeld.quote,
-                edible_id: Faker::Number.between(23, 27),
-                flower_id: Faker::Number.between(24, 28),
-                other_id: Faker::Number.between(27, 31),
-                pre_roll_id: Faker::Number.between(23, 27)
+                reviewable_id: Faker::Number.between(1, 5)
                 )
 end
 
