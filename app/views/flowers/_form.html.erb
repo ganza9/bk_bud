@@ -1,15 +1,4 @@
 <%= form_with(model: flower, local: true) do |form| %>
-  <% if flower.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(flower.errors.count, "error") %> prohibited this flower from being saved:</h2>
-
-      <ul>
-      <% flower.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= form.label :name %>

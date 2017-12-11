@@ -22,7 +22,6 @@
         <td><%= edible.description %></td>
         <td><%= link_to 'Show', edible %></td>
         <% if current_user && current_user.admin %>
-        <td><%= link_to 'New Edible', new_edible_path %></td>
         <td><%= link_to 'Edit', edit_edible_path(edible) %></td>
         <td><%= link_to 'Destroy', edible, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
@@ -31,4 +30,7 @@
 </table>
 
 <br>
+<% if current_user && current_user.admin %>
+<%= link_to 'New Edible', new_edible_path %>
+<% end %>
 <%= link_to 'Home', "/" %>

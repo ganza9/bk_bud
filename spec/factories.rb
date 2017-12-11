@@ -27,4 +27,11 @@ FactoryBot.define do
     description 'Sour Dub x Chems Sister. This indica-dominant hybrid has a piney, fruity aroma and provides heavy-handed effects. Great for deep relaxation or sedation.'
   end
 
+  factory :user do
+    email 'gennaro@test.com'
+    password 'password'
+    password_confirmation 'password'
+    admin true
+  end
+
 end

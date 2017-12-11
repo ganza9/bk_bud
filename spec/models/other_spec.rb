@@ -2,11 +2,23 @@ require 'rails_helper'
 
 describe Other do
   it { should have_many :reviews }
-end
+  it { should validate_presence_of :name }
+  it { should validate_presence_of :price }
+  it { should validate_presence_of :description }
 
-describe Other do
-  it 'has proper name' do
-    other = FactoryBot.create(:other)
-    other.description.should eq '10 inch Gandalf Pipe made on 44mm tubing with classic carb and extra-long stem. Complicated times call for deep thoughts in smoky silence. Consider every path and weigh every option with your trusted Gandalf.'
+
+  it 'has a name' do
+    edible = FactoryBot.create(:edible, :name => 'The Gandalf')
+    edible.name.should eq 'The Gandalf'
+  end
+
+  it 'has a price' do
+    edible = FactoryBot.create(:edible, :price => 14)
+    edible.price.should eq 14
+  end
+
+  it 'has a description' do
+    edible = FactoryBot.create(:edible, :description => 'Sativa')
+    edible.description.should eq 'Sativa'
   end
 end

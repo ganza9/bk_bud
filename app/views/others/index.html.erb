@@ -20,7 +20,6 @@
         <td><%= other.description %>%</td>
         <td><%= link_to 'Show', other %></td>
         <% if current_user && current_user.admin %>
-        <td><%= link_to 'New Other', new_other_path %></td>
         <td><%= link_to 'Edit', edit_other_path(other) %></td>
         <td><%= link_to 'Destroy', other, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
@@ -30,4 +29,7 @@
 </table>
 
 <br>
+<% if current_user && current_user.admin %>
+<%= link_to 'New Other', new_other_path %>
+<% end %>
 <%= link_to 'Home', "/" %>

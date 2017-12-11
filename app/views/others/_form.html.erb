@@ -1,15 +1,4 @@
 <%= form_with(model: other, local: true) do |form| %>
-  <% if other.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(other.errors.count, "error") %> prohibited this other from being saved:</h2>
-
-      <ul>
-      <% other.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= form.label :name %>
